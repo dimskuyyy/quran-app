@@ -1,14 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    purge: ['./dist/*.html'],
-    darkMode: 'class', // or 'media' or 'class'
+	purge: ["./src/*.html"],
+    darkMode: "class", // or 'media' or 'class'
     theme: {
       extend: {},
+      fontFamily:{
+        "poppins":"Poppins",
+        "amira" : "Amiri Quran"
+      }
     },
     variants: {
     extend: {},
     },
-    plugins: [],
-  };
+    plugins: [
+      require("daisyui"),
+      require("tailwind-scrollbar")({nocompatible:true})
+    ],
+};
   
   

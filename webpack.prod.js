@@ -7,7 +7,7 @@ module.exports = merge(common, {
     rules: [
         {
             test: /\.js$/i,
-            include: path.resolve(__dirname, 'src'),
+            exclude:/node_modules/,
             use: [{
                 loader: 'babel-loader',
                 options: {
