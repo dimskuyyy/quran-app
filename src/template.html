@@ -16,119 +16,42 @@
                   <li><a href="https://equran.id/apidev" target="_blank">API</a></li>
                 </ul>
             </div>
-          </div>
+        </div>
     </header>
 
     <main class="flex max-md:flex-col mx-auto w-full max-w-screen-xl  md:h-[89%]">
         <article class="pl-4 max-md:pr-4 max-md:w-full md:w-72 lg:w-96 my-8 md:mr-4 lg:mr-6">
             <section class="mx-1 mb-4">
-                <h1 class="text-xl font-bold">Daftar Surat</h1>
+                <div class="flex gap-4">
+                    <h1 class="text-xl font-bold">Daftar Surat</h1>
+                    <span id="load-surat" class="loading loading-spinner loading-sm hidden"></span>
+                </div>
                 <div class="flex gap-2 max-md:w-full mt-4">
-                    <input type="text" placeholder="Search" class="input input-bordered h-10 w-full" />
-                    <button class="btn btn-accent min-h-8 h-10 px-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-base-100">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                    </svg>
+                    <input id="input-search" type="text" placeholder="Search" class="input input-bordered h-10 w-full" />
+                    <button id="button-search" class="btn btn-accent min-h-8 h-10 px-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-base-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
                     </button>
                 </div>
             </section>
-            <section class="max-md:overflow-x-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-base-300 scrollbar-track-base-200 md:max-h-[80%] md:h-[30rem] md:overflow-y-scroll w-full rounded-box ">
-                <ul class="menu menu-vertical max-md:menu-horizontal max-md:w-max h-max bg-base-200 md:mr-2 mb-2 rounded-box flex-nowrap">
-                    <li id="4" class="active"><a href="#4" >Alfatihah</a></li>
-                    <li><a>Item 2</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li id="4"><a>Item 34123</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                  </ul>
+            <section class="max-md:overflow-x-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-base-300 scrollbar-track-base-200 md:max-h-[80%] md:h-[30rem] md:overflow-y-auto w-full rounded-box ">
+                <surat-list class="testshadow menu menu-vertical max-md:menu-horizontal max-md:w-full h-max bg-base-200 md:mr-2 mb-2 p-0 rounded-box flex-nowrap">
+                  </surat-list>
             </section>
         </article>
         <article class="w-full pr-4 max-md:pl-4 md:mt-8 md:pb-4 relative">
             <section class="mx-1 mb-4 flex justify-between items-end">
-                <h1 class="text-xl font-bold">Q.S Alfatihah </h1>
-                <h1 class="text-sm font-bold">7 Ayat</h1>
+                <div class="flex gap-2">
+                    <h1 class="text-xl font-bold nama-surat">Q.S. ...</h1>
+                    <span id="load-ayat" class="loading loading-spinner loading-sm hidden"></span>
+                </div>
+                <h1 class="text-sm font-bold verse-surat"></h1>
                 
             </section>
             <section class="md:h-[95%] rounded-box scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-base-300 scrollbar-track-base-200 md:overflow-y-auto">       
-                <ul class=" bg-base-200 md:mx-2 shadow-lg mb-2 rounded-box p-0 overflow-hidden">
-                    <li class="even:bg-base-100 odd:bg-base-200  pb-4">
-                        <div class="flex max-sm:justify-end sm:justify-center mb-4">
-                            <span class="inline-block w-14 h-8 leading-loose max-sm:rounded-bl-xl sm:rounded-b-xl text-base-100 text-center bg-accent">268</span>
-                        </div>
-                        <div class="px-2 gap-8 flex flex-col">
-                            <p class="text-center font-amira text-2xl 2xl:text-3xl 2xl:leading-[5rem] align-baseline leading-[3rem]">
-                                بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
-                            </p>
-                            <p class="text-sm text-center italic">
-                                Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="even:bg-base-100 odd:bg-base-200  pb-4">
-                        <div class="flex max-sm:justify-end sm:justify-center mb-4">
-                            <span class="inline-block w-14 h-8 leading-loose max-sm:rounded-bl-xl sm:rounded-b-xl text-base-100 text-center bg-accent">268</span>
-                        </div>
-                        <div class="md:px-4 px-2 gap-8 flex flex-col">
-                            <p class="text-center font-amira text-2xl 2xl:text-3xl 2xl:leading-[4rem] align-baseline leading-[3rem]">
-                                صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَ ࣖ
-                                صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَ ࣖ
-                            
-                            </p>
-                            <p class="text-sm text-center italic">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quas suscipit aut eos sunt. Atque cumque unde officiis rerum autem est ipsa maiores, consequuntur dolorum maxime, a aliquam, nihil expedita?
-                            </p>
-                        </div>
-                    </li>
-                    <li class="even:bg-base-100 odd:bg-base-200  py-4 px-2">
-                        <p class="text-center font-amira text-2xl my-8 align-baseline leading-[3rem]">
-                            صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَ ࣖ
-                        </p>
-                        <p class="text-sm text-center italic">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quas suscipit aut eos sunt. Atque cumque unde officiis rerum autem est ipsa maiores, consequuntur dolorum maxime, a aliquam, nihil expedita?
-                        </p>
-                    </li>
-                    <li><a>Item 2</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li id="4"><a>Item 34123</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                    <li><a>Item 3</a></li>
-                </ul>  
+                <ayat-list class="bg-base-200 md:mx-2 shadow-lg mb-2 font-Amiri_Quran rounded-box p-0 overflow-hidden min-h-16 inline-block w-[97%] max-md:w-full max-md:h-max max-md:min-h-[40rem]">
+                </ayat-list>  
             </section>
         </article>
     </main>

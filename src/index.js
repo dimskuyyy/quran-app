@@ -1,7 +1,7 @@
+import "regenerator-runtime";
 import "./style/style.css";
-import logo from "./assets/logo.png";
+import "./script/component/surat-list.js";
+import "./script/component/ayat-list.js";
+import main from "./script/view/main.js";
 
-
-const img = document.querySelector("#logo");
-img.src = logo;
-    
+document.addEventListener("DOMContentLoaded", main);
