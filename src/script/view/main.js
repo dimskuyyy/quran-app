@@ -8,7 +8,9 @@ const main = ()=>{
 	const inputSearch = document.querySelector("#input-search");
 	const buttonSearch = document.querySelector("#button-search");
 	const img = document.querySelector("#logo");
+	const icon = document.querySelector("[rel='icon']");
 	img.src = logo;
+	icon.href = logo;
 
 	const loadSurat = async (search) =>{
 		try {
